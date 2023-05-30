@@ -47,6 +47,20 @@ const ScanArea = () => {
     }
   }, [activeHands]);
 
+  const handleKeyDown = (event) => {
+    if (event.key) {
+      handleIconClick("right");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   return (
     <section id="finder">
       <div className="container">
