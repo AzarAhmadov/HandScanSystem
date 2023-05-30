@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './css/App.scss';
 import Animate from './components/Animate';
-import Hand from '../public/images/hand.png';
+import Hand from '../public/images/hands.png';
 import Progress from './components/Progress';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
 
@@ -41,7 +41,7 @@ const ScanArea = () => {
         setActiveHands([]);
 
         return () => clearTimeout(finishTimer);
-      }, 6000);
+      }, 2000);
 
       return () => clearTimeout(progressTimer);
     }
