@@ -5,7 +5,7 @@ const Progress = () => {
 
   useEffect(() => {
     const interval = 10; // Yenilenme hızını ayarlayın (ms)
-    const totalDuration = 11000; // Toplam süreyi ayarlayın (ms)
+    const totalDuration = 10000; // Toplam süreyi ayarlayın (ms)
     const steps = Math.ceil(totalDuration / interval);
     let currentStep = 0;
 
