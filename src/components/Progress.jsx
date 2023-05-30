@@ -4,8 +4,8 @@ const Progress = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const interval = 14; 
-    const totalDuration = 3800; 
+    const interval = 14;
+    const totalDuration = 3900;
     const steps = Math.ceil(totalDuration / interval);
     let currentStep = 0;
 
@@ -28,7 +28,7 @@ const Progress = () => {
 
   return (
     <div className='progress' style={{ width: '100%' }}>
-      <div style={{ width: `${progress}%`}}></div>
+      <div style={{ width: `${progress}%` }}></div>
     </div>
   );
 };
