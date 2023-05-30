@@ -7,16 +7,11 @@ const ScanShow = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
-    let x = 4;
     let y = 4;
     let speed = 0.5;
-    let isBottom = false;
-    let startTime = null;
+    let direction = 1;
 
-    const draw = (timestamp) => {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
-
+    const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       if (isAnimating) {
@@ -24,25 +19,18 @@ const ScanShow = () => {
         ctx.lineCap = 'round';
         ctx.shadowBlur = 10;
         ctx.shadowColor = '#fff';
-        ctx.fillRect(x, y, 200, 5);
+        ctx.fillRect(4, y, 200, 5);
 
-        if (!isBottom && y < canvas.height - 14) {
-          y += speed;
-        } else if (y >= canvas.height - 14) {
-          isBottom = true;
-        }
+        y += speed * direction;
 
-        if (isBottom && y > 4) {
-          y -= speed;
-        } else if (y <= 4) {
-          isBottom = false;
-        }
-
-        if (elapsed < 4420) {
-          requestAnimationFrame(draw);
-        } else {
+        if (direction === 1 && y >= canvas.height - 14) {
+          direction = -1; 
+        } else if (direction === -1 && y <= 4) {
           setIsAnimating(false);
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        if (isAnimating) {
+          requestAnimationFrame(draw);
         }
       }
     };
