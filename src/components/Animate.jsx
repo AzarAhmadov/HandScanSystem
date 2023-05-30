@@ -9,7 +9,7 @@ const ScanShow = () => {
         const ctx = canvas.getContext('2d');
         let x = 4;
         let y = 4;
-        let speed = 1;
+        let speed = 2;
         let isBottom = false;
         let startTime = null;
 
@@ -32,7 +32,7 @@ const ScanShow = () => {
                 if (isBottom && y > 4) y -= speed;
                 else if (y === 4) isBottom = false;
 
-                if (elapsed < 2300) {
+                if (elapsed < 2500) { // 3 seconds = 3000 milliseconds
                     requestAnimationFrame(draw);
                 } else {
                     setIsAnimating(false);
@@ -51,4 +51,4 @@ const ScanShow = () => {
     )
 };
 
-export default (ScanShow)
+export default ScanShow;
