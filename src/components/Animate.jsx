@@ -32,7 +32,7 @@ const ScanShow = () => {
                 if (isBottom && y > 4) y -= speed;
                 else if (y === 4) isBottom = false;
 
-                if (elapsed < 2200) {
+                if (elapsed < 2300) {
                     requestAnimationFrame(draw);
                 } else {
                     setIsAnimating(false);
