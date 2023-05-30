@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+#finder {
+  overflow-x: hidden;
+  background: #152e65;
+}
+#finder .container {
+  padding: 0 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+#finder .container .row {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: space-between;
+}
+#finder .container .row .scan-left {
+  width: 500px;
+  height: 700px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#finder .container .row .scan-left img {
+  width: 500px;
+  height: 680px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#finder .container .row .scan-right {
+  width: 500px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#finder .container .row .scan-right img {
+  width: 500px;
+  height: 680px;
+  opacity: 0.8;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.canvas {
+  position: absolute;
+  width: 100%;
+  height: 677px;
+  display: grid;
+  place-items: center;
+  top: 10px;
+  background: rgba(0, 0, 0, 0.4);
+}
+.canvas canvas {
+  width: 720px;
+  height: 70vh;
+}/*# sourceMappingURL=App.css.map */

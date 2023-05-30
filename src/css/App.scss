@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+#finder {
+  overflow-x: hidden;
+  background: #152e65;
+
+  .container {
+    padding: 0 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    .row {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      justify-content: space-between;
+
+      .scan-left {
+        width: 500px;
+        height: 700px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 500px;
+          height: 680px;
+          object-fit: cover;
+        }
+      }
+
+      .scan-right {
+        width: 500px;
+        height: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        img {
+          width: 500px;
+          height: 680px;
+          opacity: 0.8;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+.canvas {
+  position: absolute;
+  width: 100%;
+  height:677px;
+  display: grid;
+  place-items: center;
+  top: 10px;
+  background: rgba(0,0,0,0.4);
+
+
+  canvas {
+    width: 720px;
+    height: 70vh;
+  }
+}
