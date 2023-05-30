@@ -74,13 +74,11 @@ const ScanArea = () => {
         </div>
         {showProgress && <Progress />}
 
-        {showFinish && (
-          <div className="finish">
+          <div className={`finish ${showFinish ? 'active' : ''}`}>
             <div className="content">
               <AiOutlineCheckCircle />
             </div>
           </div>
-        )}
       </div>
     </section>
   );
