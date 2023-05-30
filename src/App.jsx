@@ -51,11 +51,11 @@ const ScanArea = () => {
     <section id="finder">
       <div className="container">
         <div className="row">
-          <div style={{ transform: 'scaleX(-1)' }} className="scan-left">
-            <HandIcon hand="left" />
-          </div>
           <div className="scan-right">
             <HandIcon hand="right" />
+          </div>
+          <div style={{ transform: 'scaleX(-1)' }} className="scan-left">
+            <HandIcon hand="left" />
           </div>
         </div>
         {showProgress && <Progress />}
