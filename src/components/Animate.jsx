@@ -8,7 +8,7 @@ const ScanShow = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     let y = 4;
-    let speed = 0.5;
+    let speed = 1;
     let direction = 1;
 
     const draw = () => {
