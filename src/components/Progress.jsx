@@ -5,7 +5,7 @@ const Progress = () => {
 
   useEffect(() => {
     const interval = 14; 
-    const totalDuration = 8900; 
+    const totalDuration = 6900; 
     const steps = Math.ceil(totalDuration / interval);
     let currentStep = 0;
 
