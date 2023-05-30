@@ -9,7 +9,7 @@ const ScanShow = () => {
         const ctx = canvas.getContext('2d');
         let x = 4;
         let y = 4;
-        let speed = 2;
+        let speed = 1;
         let isBottom = false;
         let startTime = null;
 
@@ -24,7 +24,7 @@ const ScanShow = () => {
                 ctx.lineCap = 'round';
                 ctx.shadowBlur = 10;
                 ctx.shadowColor = '#2980B9';
-                ctx.fillRect(x, y, 200, 5);
+                ctx.fillRect(x, y, 200,5);
 
                 if (!isBottom && y < canvas.height - 14) y += speed;
                 else if (y === canvas.height - 14) isBottom = true;

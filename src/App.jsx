@@ -41,7 +41,7 @@ const ScanArea = () => {
         setActiveHands([]);
 
         return () => clearTimeout(finishTimer);
-      }, 2000);
+      }, 2200);
 
       return () => clearTimeout(progressTimer);
     }
