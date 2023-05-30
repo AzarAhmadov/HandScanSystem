@@ -12,14 +12,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(270deg);
-  background-color: #fff;
-  width: 550px !important;
-  height: 20px;
+  background-color: rgba(255, 255, 255, 0.6823529412);
+  width: 540px !important;
+  height: 25px;
   border-radius: 5px;
 }
 .progress div {
   background-color: #2E86C1 !important;
-  height: 20px !important;
+  height: 25px !important;
 }
 
 #finder {
@@ -130,24 +130,7 @@
 }
 .finish svg {
   fill: #fff;
-  font-size: 120px;
-  position: absolute;
-  animation: slideAnimation 4s ease-in-out infinite;
-}
-@keyframes slideAnimation {
-  0% {
-    transform: translateX(-50%);
-    opacity: 0;
-  }
-  50% {
-    transform: translateX(0);
-    opacity: 1;
-    font-size: 140px;
-  }
-  100% {
-    transform: translateX(50%);
-    opacity: 0;
-  }
+  font-size: 130px;
 }
 
 @media only screen and (max-width: 1024px) {

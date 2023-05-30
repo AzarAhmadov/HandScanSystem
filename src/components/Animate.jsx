@@ -9,7 +9,7 @@ const ScanShow = () => {
         const ctx = canvas.getContext('2d');
         let x = 4;
         let y = 4;
-        let speed = 1;
+        let speed = 0.5;
         let isBottom = false;
         let startTime = null;
 
@@ -20,11 +20,11 @@ const ScanShow = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             if (isAnimating) {
-                ctx.fillStyle = '#2980B9';
+                ctx.fillStyle = '#fff';
                 ctx.lineCap = 'round';
                 ctx.shadowBlur = 10;
-                ctx.shadowColor = '#2980B9';
-                ctx.fillRect(x, y, 200,5);
+                ctx.shadowColor = '#fff';
+                ctx.fillRect(x, y, 200, 5);
 
                 if (!isBottom && y < canvas.height - 14) y += speed;
                 else if (y === canvas.height - 14) isBottom = true;
@@ -32,7 +32,7 @@ const ScanShow = () => {
                 if (isBottom && y > 4) y -= speed;
                 else if (y === 4) isBottom = false;
 
-                if (elapsed < 2500) { // 3 seconds = 3000 milliseconds
+                if (elapsed < 4420) {
                     requestAnimationFrame(draw);
                 } else {
                     setIsAnimating(false);
@@ -48,7 +48,7 @@ const ScanShow = () => {
         <div className='canvas' style={{ display: isAnimating ? 'block' : 'none' }}>
             <canvas ref={canvasRef} />
         </div>
-    )
+    );
 };
 
 export default ScanShow;

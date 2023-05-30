@@ -12,14 +12,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(270deg);
-  background-color: #fff;
-  width: 550px !important;
-  height: 20px;
+  background-color: #ffffffae;
+  width: 540px !important;
+  height: 25px;
   border-radius: 5px;
 
   div {
     background-color: #2E86C1 !important;
-    height: 20px !important;
+    height: 25px !important;
   }
 }
 
@@ -82,7 +82,6 @@
   place-items: center;
   top: 10px;
 
-
   canvas {
     width: 720px;
     height: 105%;
@@ -140,29 +139,8 @@
 
   svg {
     fill: #fff;
-    font-size: 120px;
-    position: absolute;
-    animation: slideAnimation 4s ease-in-out infinite;
+    font-size: 130px;
   }
-
-  @keyframes slideAnimation {
-    0% {
-      transform: translateX(-50%);
-      opacity: 0;
-    }
-
-    50% {
-      transform: translateX(0);
-      opacity: 1;
-      font-size: 140px;
-    }
-
-    100% {
-      transform: translateX(50%);
-      opacity: 0;
-    }
-  }
-
 }
 
 @media only screen and (max-width:1024px) {
