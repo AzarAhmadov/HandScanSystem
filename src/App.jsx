@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './css/App.scss';
 import Animate from './components/Animate';
-import Hand from '../public/images/left.jpeg';
+import Hand from '../public/images/hand.png';
+import Progress from './components/Progress';
+import { AiOutlineCheckCircle } from 'react-icons/ai';
 
 const ScanArea = () => {
   const [activeHands, setActiveHands] = useState([]);
+  const [showProgress, setShowProgress] = useState(false);
+  const [showFinish, setShowFinish] = useState(false);
 
   const handleIconClick = (hand) => {
     if (activeHands.includes(hand)) {
@@ -25,6 +29,24 @@ const ScanArea = () => {
     );
   };
 
+  useEffect(() => {
+    if (activeHands.length > 0) {
+      setShowProgress(true);
+      const progressTimer = setTimeout(() => {
+        setShowProgress(false);
+        setShowFinish(true);
+        const finishTimer = setTimeout(() => {
+          setShowFinish(false);
+        }, 3000);
+        setActiveHands([]);
+
+        return () => clearTimeout(finishTimer);
+      }, 6000);
+
+      return () => clearTimeout(progressTimer);
+    }
+  }, [activeHands]);
+
   return (
     <section id="finder">
       <div className="container">
@@ -36,6 +58,15 @@ const ScanArea = () => {
             <HandIcon hand="right" />
           </div>
         </div>
+        {showProgress && <Progress />}
+
+        {showFinish && (
+          <div className="finish">
+            <div className="content">
+              <AiOutlineCheckCircle />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

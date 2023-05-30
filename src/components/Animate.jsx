@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const ScanShow = () => {
-    console.log('render oldu')
     const canvasRef = useRef(null);
     const [isAnimating, setIsAnimating] = useState(true);
 
@@ -33,7 +32,7 @@ const ScanShow = () => {
                 if (isBottom && y > 4) y -= speed;
                 else if (y === 4) isBottom = false;
 
-                if (elapsed < 5000) {
+                if (elapsed < 6000) {
                     requestAnimationFrame(draw);
                 } else {
                     setIsAnimating(false);

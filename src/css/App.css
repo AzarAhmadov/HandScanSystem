@@ -6,9 +6,26 @@
   border: none;
 }
 
+.progress {
+  position: absolute;
+  top: 50%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 500px !important;
+  height: 20px;
+  border-radius: 5px;
+  transform: rotate(270deg);
+}
+.progress div {
+  background-color: #2E86C1 !important;
+  height: 20px !important;
+}
+
 #finder {
   overflow-x: hidden;
   background: #152e65;
+  position: relative;
 }
 #finder .container {
   padding: 0 20px;
@@ -58,7 +75,6 @@
   display: grid;
   place-items: center;
   top: 10px;
-  background: rgba(0, 0, 0, 0.4);
 }
 .canvas canvas {
   width: 720px;
