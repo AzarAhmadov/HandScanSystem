@@ -177,6 +177,7 @@
   #finder .container .row .scan-right {
     height: -moz-fit-content;
     height: fit-content;
+    background: transparent;
   }
   #finder .container .row .scan-left img,
   #finder .container .row .scan-right img {
