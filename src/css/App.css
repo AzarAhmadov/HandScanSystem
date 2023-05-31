@@ -48,6 +48,7 @@
 .progress div {
   background-color: #2E86C1 !important;
   height: 25px !important;
+  border-radius: 5px;
 }
 
 #finder {

@@ -38,8 +38,15 @@ const ScanArea = () => {
     if (!activeHands.includes(hand)) {
       setActiveHands((prevActiveHands) => [...prevActiveHands, hand]);
       setButtonImage(GreenImage);
+
+      if (hand === 'right' && activeHands.includes('left')) {
+        setActiveHands(['right', 'left']);
+      } else if (hand === 'left' && activeHands.includes('right')) {
+        setActiveHands(['right', 'left']);
+      }
     }
   };
+
 
   useEffect(() => {
     if (activeHands.length > 0 && !completed) {
