@@ -170,15 +170,22 @@
 }
 
 @media only screen and (max-width: 1024px) {
+  #finder .container {
+    padding: 0;
+  }
+  #finder .container .row .scan-left,
+  #finder .container .row .scan-right {
+    background: transparent;
+  }
   #finder .container .row .scan-left img,
   #finder .container .row .scan-right img {
     -o-object-fit: contain;
        object-fit: contain;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
   }
   .progress {
-    width: 250px !important;
+    width: 200px !important;
     height: 10px;
   }
   .progress div {

@@ -186,14 +186,15 @@
 @media only screen and (max-width:1024px) {
   #finder {
     .container {
+      padding: 0;
       .row {
-
         .scan-left,
         .scan-right {
+          background: transparent;
           img {
             object-fit: contain;
-            width: 100%;
-            height: 100%;
+            width: 80%;
+            height: 80%;
           }
         }
       }
@@ -201,7 +202,7 @@
   }
 
   .progress {
-    width: 250px !important;
+    width: 200px !important;
     height: 10px;
 
     div {
