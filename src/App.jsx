@@ -39,9 +39,6 @@ const ScanArea = () => {
     setButtonImage(GreenImage);
   };
 
-
-
-
   useEffect(() => {
     if (activeHands.length > 0 && !completed) {
       setShowProgress(true);
@@ -91,13 +88,14 @@ const ScanArea = () => {
           </div>
         </div>
         {showProgress && <Progress />}
-        {showFinish && (
-          <div className="finish active">
+
+          <div className={`finish ${showFinish ? 'active' : ''}`}>
             <div className="content">
               <AiOutlineCheckCircle />
             </div>
           </div>
-        )}
+        
+
       </div>
     </section>
   );
