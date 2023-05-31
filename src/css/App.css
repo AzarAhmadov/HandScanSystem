@@ -175,7 +175,8 @@
   }
   #finder .container .row .scan-left,
   #finder .container .row .scan-right {
-    background: none;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   #finder .container .row .scan-left img,
   #finder .container .row .scan-right img {

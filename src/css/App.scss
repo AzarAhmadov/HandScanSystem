@@ -187,10 +187,13 @@
   #finder {
     .container {
       padding: 0;
+
       .row {
+
         .scan-left,
         .scan-right {
-          background: none;
+          height: fit-content;
+
           img {
             object-fit: contain;
             width: 80%;
