@@ -38,9 +38,6 @@ const ScanArea = () => {
     if (!activeHands.includes(hand)) {
       setActiveHands((prevActiveHands) => [...prevActiveHands, hand]);
       setButtonImage(GreenImage);
-    } else {
-      setActiveHands([]);
-      setButtonImage(RedImage);
     }
   };
 
@@ -72,7 +69,10 @@ const ScanArea = () => {
 
   return (
     <section id="finder">
-      <div className="container" onTouchStart={handleTouchStart}>
+      <div
+        className="container"
+        onTouchStart={handleTouchStart}
+      >
         <div className="row">
           <div
             className={`scan-right ${activeHands.includes('right') ? 'active' : ''}`}
