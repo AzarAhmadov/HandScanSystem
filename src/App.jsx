@@ -28,6 +28,16 @@ const ScanArea = () => {
     handleIconHover({ currentTarget: { dataset: { hand } } });
   };
 
+  const handleTouchStart = (event) => {
+    event.preventDefault();
+    const hand = event.currentTarget.dataset.hand;
+
+    if (!activeHands.includes(hand)) {
+      setActiveHands((prevActiveHands) => [...prevActiveHands, hand]);
+      setButtonImage(GreenImage);
+    }
+  };
+
   useEffect(() => {
     if (activeHands.length > 0) {
       setShowProgress(true);
@@ -55,7 +65,10 @@ const ScanArea = () => {
 
   return (
     <section id="finder">
-      <div className="container">
+      <div
+        className="container"
+        onTouchStart={handleTouchStart}
+      >
         <div className="row">
           <div
             className={`scan-right ${activeHands.includes('right') ? 'active' : ''}`}
