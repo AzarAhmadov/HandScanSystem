@@ -175,7 +175,7 @@
   }
   #finder .container .row .scan-left,
   #finder .container .row .scan-right {
-    background: transparent;
+    background: none;
   }
   #finder .container .row .scan-left img,
   #finder .container .row .scan-right img {

@@ -11,7 +11,9 @@ const ScanArea = () => {
   const [showFinish, setShowFinish] = useState(false);
   const [buttonImage, setButtonImage] = useState(RedImage);
 
-  const handleIconClick = (hand) => {
+  const handleIconHover = (event) => {
+    const hand = event.currentTarget.dataset.hand;
+
     if (activeHands.includes(hand)) {
       setActiveHands([]);
       setButtonImage(RedImage);
@@ -19,6 +21,11 @@ const ScanArea = () => {
       setActiveHands(['right', 'left']);
       setButtonImage(GreenImage);
     }
+  };
+
+  const handleKeyPress = (event) => {
+    const hand = event.key;
+    handleIconHover({ currentTarget: { dataset: { hand } } });
   };
 
   useEffect(() => {
@@ -38,14 +45,30 @@ const ScanArea = () => {
     }
   }, [activeHands]);
 
+  useEffect(() => {
+    window.addEventListener('keyup', handleKeyPress);
+
+    return () => {
+      window.removeEventListener('keyup', handleKeyPress);
+    };
+  }, []);
+
   return (
     <section id="finder">
       <div className="container">
         <div className="row">
-          <div className={`scan-right ${activeHands.includes('right') ? 'active' : ''}`} onClick={() => handleIconClick('right')}>
+          <div
+            className={`scan-right ${activeHands.includes('right') ? 'active' : ''}`}
+            data-hand="right"
+            onMouseEnter={handleIconHover}
+          >
             <img src={buttonImage} alt="Button" className="button-image" />
           </div>
-          <div className={`scan-left ${activeHands.includes('left') ? 'active' : ''}`} onClick={() => handleIconClick('left')}>
+          <div
+            className={`scan-left ${activeHands.includes('left') ? 'active' : ''}`}
+            data-hand="left"
+            onMouseEnter={handleIconHover}
+          >
             <img src={buttonImage} alt="Button" className="button-image" />
           </div>
         </div>
