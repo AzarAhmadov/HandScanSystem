@@ -10,6 +10,7 @@ const ScanArea = () => {
   const [showProgress, setShowProgress] = useState(false);
   const [showFinish, setShowFinish] = useState(false);
   const [buttonImage, setButtonImage] = useState(RedImage);
+  const [completed, setCompleted] = useState(false);
 
   const handleIconHover = (event) => {
     const hand = event.currentTarget.dataset.hand;
@@ -39,13 +40,14 @@ const ScanArea = () => {
   };
 
   useEffect(() => {
-    if (activeHands.length > 0) {
+    if (activeHands.length > 0 && !completed) {
       setShowProgress(true);
       const progressTimer = setTimeout(() => {
         setShowProgress(false);
         setShowFinish(true);
         const finishTimer = setTimeout(() => {
           setShowFinish(false);
+          setCompleted(true);
         }, 4700);
 
         return () => clearTimeout(finishTimer);
@@ -53,7 +55,7 @@ const ScanArea = () => {
 
       return () => clearTimeout(progressTimer);
     }
-  }, [activeHands]);
+  }, [activeHands, completed]);
 
   useEffect(() => {
     window.addEventListener('keyup', handleKeyPress);
