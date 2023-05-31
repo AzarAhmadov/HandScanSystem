@@ -36,11 +36,13 @@ const ScanArea = () => {
     const hand = event.currentTarget.dataset.hand;
 
     if (!activeHands.includes(hand)) {
-      const updatedHands = [...activeHands, hand];
-      setActiveHands(updatedHands);
+      setActiveHands((prevActiveHands) => [...prevActiveHands, hand]);
+      setButtonImage(GreenImage);
 
-      if (updatedHands.includes('right') && updatedHands.includes('left')) {
-        setButtonImage(GreenImage);
+      if (hand === 'right' && activeHands.includes('left')) {
+        setActiveHands(['right', 'left']);
+      } else if (hand === 'left' && activeHands.includes('right')) {
+        setActiveHands(['right', 'left']);
       }
     }
   };
