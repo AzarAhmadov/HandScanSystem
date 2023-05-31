@@ -71,8 +71,8 @@
 #finder .container .row .scan-left {
   display: flex;
   align-items: center;
-  width: 450px;
-  height: 450px;
+  width: 400px;
+  height: 400px;
   background: #fff;
   border-radius: 50%;
   justify-content: center;
@@ -92,8 +92,8 @@
 #finder .container .row .scan-right {
   display: flex;
   align-items: center;
-  width: 450px;
-  height: 450px;
+  width: 400px;
+  height: 400px;
   background: #fff;
   border-radius: 50%;
   justify-content: center;
