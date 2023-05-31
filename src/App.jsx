@@ -13,6 +13,8 @@ const ScanArea = () => {
   const [completed, setCompleted] = useState(false);
 
   const handleIconHover = (event) => {
+    if (completed) return; // Return early if already completed
+
     const hand = event.currentTarget.dataset.hand;
 
     if (activeHands.includes(hand)) {
