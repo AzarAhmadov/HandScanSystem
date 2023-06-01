@@ -4,6 +4,7 @@ import Progress from './components/Progress';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
 import RedImage from '../public/images/bt_red.png';
 import GreenImage from '../public/images/bt_green.png';
+import Logo from '../public/images/logo.png';
 
 const ScanArea = () => {
   const [activeHands, setActiveHands] = useState([]);
@@ -67,6 +68,9 @@ const ScanArea = () => {
 
   return (
     <section id="finder">
+      <div className="logo">
+        <img src={Logo} />
+      </div>
       <div
         className="container"
         onTouchStart={handleTouchStart}

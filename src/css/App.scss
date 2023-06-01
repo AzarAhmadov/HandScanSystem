@@ -184,6 +184,13 @@
   }
 }
 
+.logo{
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
 @media only screen and (max-width:1024px) {
   #finder {
     .container {
