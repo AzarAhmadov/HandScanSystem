@@ -189,6 +189,10 @@
   top: 15px;
   left: 50%;
   transform: translate(-50%);
+  img{
+    width: 260px;
+    object-fit: contain;
+  }
 }
 
 @media only screen and (max-width:1024px) {

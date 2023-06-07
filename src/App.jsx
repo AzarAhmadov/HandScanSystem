@@ -4,7 +4,7 @@ import Progress from './components/Progress';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
 import RedImage from '../public/images/bt_red.png';
 import GreenImage from '../public/images/bt_green.png';
-import Logo from '../public/images/logo.png';
+import Logo from '../public/images/ENTezlogo.png';
 
 const ScanArea = () => {
   const [activeHands, setActiveHands] = useState([]);
@@ -14,7 +14,7 @@ const ScanArea = () => {
   const [completed, setCompleted] = useState(false);
 
   const handleIconHover = (event) => {
-    if (completed) return; // Return early if already completed
+    if (completed) return;
 
     const hand = event.currentTarget.dataset.hand;
 
@@ -93,12 +93,12 @@ const ScanArea = () => {
         </div>
         {showProgress && <Progress />}
 
-          <div className={`finish ${showFinish ? 'active' : ''}`}>
-            <div className="content">
-              <AiOutlineCheckCircle />
-            </div>
+        <div className={`finish ${showFinish ? 'active' : ''}`}>
+          <div className="content">
+            <AiOutlineCheckCircle />
           </div>
-        
+        </div>
+
 
       </div>
     </section>
