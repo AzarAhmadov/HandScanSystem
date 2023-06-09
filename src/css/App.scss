@@ -73,8 +73,8 @@
       .scan-left {
         display: flex;
         align-items: center;
-        width: 400px;
-        height: 400px;
+        width: 450px;
+        height: 450px;
         background: #fff;
         border-radius: 50%;
         justify-content: center;
@@ -96,8 +96,8 @@
       .scan-right {
         display: flex;
         align-items: center;
-        width: 400px;
-        height: 400px;
+        width: 450px;
+        height: 450px;
         background: #fff;
         border-radius: 50%;
         justify-content: center;
@@ -184,12 +184,13 @@
   }
 }
 
-.logo{
+.logo {
   position: absolute;
   top: 15px;
   left: 50%;
   transform: translate(-50%);
-  img{
+
+  img {
     width: 260px;
     object-fit: contain;
   }
